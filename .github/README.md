@@ -1,76 +1,60 @@
 # Section 11 public demo
 
-This is **fictional demo data**, generated without a real athlete, account or
-credentials. Never use its values as training advice. It demonstrates data
-publication and verified official Section 11 updates in a visible repository.
+> [!IMPORTANT]
+> **This demo shows how a Section 11 data repository works, not what your data will look like.**
+> Everything here is fictional, and the JSON files are deliberately small stand-ins.
+> A real `latest.json` is much larger and covers more days; see
+> [Demo vs. real setup](#demo-vs-real-setup). Never use these values as training advice.
 
-![Daily synthetic sync](https://github.com/CrankAddict/section-11-demo/actions/workflows/auto-sync.yml/badge.svg)
+[![Daily synthetic sync](https://github.com/CrankAddict/section-11-demo/actions/workflows/auto-sync.yml/badge.svg)](https://github.com/CrankAddict/section-11-demo/actions/workflows/auto-sync.yml)
 
-**Last successful sync:** not yet run
+## What this demo shows
 
-The fictional rider uses indoor cycling, five rides and two rest days per week.
-All values, identifiers and the sample [DOSSIER.md](DOSSIER.md) are invented.
-No GPS routes, private context or health records are included. This public
-dossier is a demonstration artifact, never a real athlete's authoritative dossier.
+- **Installation from an official release.** The first Sync installed
+  [`section11/`](https://github.com/CrankAddict/section-11-demo/tree/main/section11) from the verified official Section 11
+  release, exactly as it does for a new user.
+- **Daily automatic data commits.** A scheduled run at 05:07 UTC writes the data
+  files, a copy in [`archive/`](https://github.com/CrankAddict/section-11-demo/tree/main/archive) and the sync time in
+  [README.md](https://github.com/CrankAddict/section-11-demo/blob/main/README.md). GitHub may delay or skip a scheduled run.
+- **Automatic, verified updates.** When a new official release is published, the demo
+  installs it on its own. [Actions](https://github.com/CrankAddict/section-11-demo/actions) and the
+  [commit history](https://github.com/CrankAddict/section-11-demo/commits/main) show each installation and its release.
+- **The file layout of a real GitHub data repository:** the same seven JSON files,
+  `archive/`, `section11/` and [`custom/`](https://github.com/CrankAddict/section-11-demo/tree/main/custom) for your own files.
 
-[Sync Now](../../actions/workflows/auto-sync.yml) requests today's synthetic files.
-The schedule requests one run at 05:07 UTC daily; GitHub may delay or skip it.
-The generator uses only the UTC date, so repeating a date produces identical
-bytes. A second run on the same UTC date normally stops at publication's
-unchanged-latest guard and makes no data commit; a new update notice can change
-the exported notice. Use Status or Update when only maintenance is needed.
-The first run creates the JSON files; none are seeded with stale sample dates.
+## What it does not show
 
-[latest.json](latest.json) contains a seven-day snapshot. [history.json](history.json)
-contains 28 synthetic days. The other JSON companions contain labelled sample
-FTP history or explicit empty interval, route and workout collections. These
-files demonstrate the publication contract, not every sync.py field or analysis.
-The timestamp is the synthetic day's midnight UTC, not the runner's wall time.
+- **Real training data or analysis.** A small fictional generator
+  ([demo/generate.py](https://github.com/CrankAddict/section-11-demo/blob/main/demo/generate.py)) replaces Intervals.icu:
+  one indoor rider, five rides and two rest days a week. No account, key or personal
+  data is involved.
+- **The full contents of the real files.** The demo files only demonstrate publication
+  and updates. Reports and AI analysis need the real files described below.
 
-The single sync/update workflow uses the published sealed user template. Its
-data step uses [demo/generate.py](demo/generate.py) at 05:07 UTC daily; publication,
-archiving, README timestamp updates and six-file downloads use the ordinary
-verified controller.
-The fictional producer needs no athlete secrets or slow-source cache.
-Real users use the ordinary sync launcher with their own private account and
-keep their dossier private. They should not copy this public demo as a data repo.
+## Demo vs. real setup
 
-Official release files live under `section11/`, installed through the normal
-first Sync installation. A test or development copy cannot
-substitute for an official release. The owner enables
-`SECTION11_AUTO_UPDATE=true` after checking the initial installation and data
-readbacks. [Actions](../../actions) and repository history show the release
-identity, exact parent/tree, direct commit outcome and refusals. The same workflow
-offers Sync, Update, Status and Rollback. See the installed
-[direct-update contract](section11/examples/maintenance/UPDATING.md#automatic-github-updates).
+| File | This demo | Real setup |
+|---|---|---|
+| [latest.json](https://github.com/CrankAddict/section-11-demo/blob/main/latest.json) | 8 sections: 7 days of rides and wellness, no planned workouts | About 25 sections, including readiness, alerts, derived metrics, weekly summary and race calendar. Wellness and summaries cover the last 7 days, activities with interval data the last 28 days, plus a 28-day wellness series. Planned workouts up to 42 days ahead |
+| [history.json](https://github.com/CrankAddict/section-11-demo/blob/main/history.json) | 28 fictional days | Long-term history: 90 days daily, 180 days weekly, summaries up to 3 years |
+| [intervals.json](https://github.com/CrankAddict/section-11-demo/blob/main/intervals.json) | empty | Interval, structure and DFA detail for completed sessions, kept 14 days |
+| [routes.json](https://github.com/CrankAddict/section-11-demo/blob/main/routes.json) | empty (indoor demo) | Planned routes with terrain and weather |
+| [route_eta_history.json](https://github.com/CrankAddict/section-11-demo/blob/main/route_eta_history.json) | empty | Rolling 180-day record for route time estimates |
+| [ftp_history.json](https://github.com/CrankAddict/section-11-demo/blob/main/ftp_history.json) | one sample entry | FTP progression |
+| [saved_workouts.json](https://github.com/CrankAddict/section-11-demo/blob/main/saved_workouts.json) | empty | Your saved workout library (read-only) |
 
-[SETUP_DEMO.md](SETUP_DEMO.md) has the owner's setup and first-run checks.
-Personal experiments belong in [custom/](custom/). Keep this repository entirely
-fictional. It uses the official Section 11 release, distributed under [LICENSE](LICENSE).
+For a fuller fictional example of the real format, see
+[`section11/examples/json-examples/`](https://github.com/CrankAddict/section-11-demo/tree/main/section11/examples/json-examples).
+Those examples come from an older sync version, so the newest sections are missing.
 
-## Local setup
+## Use Section 11 for real
 
-On your own machine, a local data folder looks like this:
+- **GitHub:** follow the [GitHub setup guide](https://github.com/CrankAddict/section-11-demo/blob/main/section11/examples/json-auto-sync/SETUP.md)
+  with your own **private** repository and your own Intervals.icu key.
+  Do not copy this public demo as a data repository.
+- **Your own computer:** follow the [local sync guide](https://github.com/CrankAddict/section-11-demo/blob/main/section11/examples/json-local-sync/SETUP.md).
+- **Updates and rollback:** see [UPDATING.md](https://github.com/CrankAddict/section-11-demo/blob/main/section11/examples/maintenance/UPDATING.md).
+- Keep your real dossier private. The [DOSSIER.md](https://github.com/CrankAddict/section-11-demo/blob/main/DOSSIER.md) here is an invented sample.
 
-```text
-training-data/
-├── latest.json, history.json, ...  # live JSON files
-├── archive/                       # where present
-├── maps/                          # where present
-├── section11/                     # managed official files
-├── custom/                        # personal files
-├── DOSSIER.md                     # private dossier
-└── state/                         # private request accounting
-```
-
-Keep `state/` on the machine; never publish it. Keep your real dossier private.
-Auto sync is installed by default using launchd, systemd, cron or Windows Task
-Scheduler; an explicit --no-timer choice keeps manual operation. The configured
-check interval is preserved; see the [local sync guide](section11/examples/json-local-sync/SETUP.md).
-
-Local updates are manual by default and ask for your confirmation. You can opt
-into a daily update on the first run at or after 04:00 UTC, after data work even
-if it failed, with one-step rollback to the previous installation. Failed or
-unknown maintenance consumes the day; a rerun may claim an unclaimed day.
-Automatic checks skip a rolled-back date; explicit Update installs it and clears
-the skip; see [updates and rollback](section11/examples/maintenance/UPDATING.md).
+Owner setup and first-run checks: [SETUP_DEMO.md](https://github.com/CrankAddict/section-11-demo/blob/main/SETUP_DEMO.md).
+Section 11 is distributed under its [LICENSE](https://github.com/CrankAddict/section-11-demo/blob/main/section11/LICENSE).
