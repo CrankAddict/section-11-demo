@@ -56,5 +56,4 @@ Those examples come from an older sync version, so the newest sections are missi
 - **Updates and rollback:** see [UPDATING.md](https://github.com/CrankAddict/section-11-demo/blob/main/section11/examples/maintenance/UPDATING.md).
 - Keep your real dossier private. The [DOSSIER.md](https://github.com/CrankAddict/section-11-demo/blob/main/DOSSIER.md) here is an invented sample.
 
-Owner setup and first-run checks: [SETUP_DEMO.md](https://github.com/CrankAddict/section-11-demo/blob/main/SETUP_DEMO.md).
 Section 11 is distributed under its [LICENSE](https://github.com/CrankAddict/section-11-demo/blob/main/section11/LICENSE).
