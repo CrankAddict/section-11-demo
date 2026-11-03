@@ -1,0 +1,381 @@
+{
+  "activities": [
+    {
+      "average_heartrate": 133,
+      "average_watts": 130,
+      "id": "demo-2026-10-07",
+      "moving_time": 2700,
+      "name": "Fictional indoor endurance ride",
+      "start_date_local": "2026-10-07T08:00:00",
+      "synthetic": true,
+      "type": "VirtualRide"
+    },
+    {
+      "average_heartrate": 137,
+      "average_watts": 170,
+      "id": "demo-2026-10-08",
+      "moving_time": 4500,
+      "name": "Fictional indoor endurance ride",
+      "start_date_local": "2026-10-08T08:00:00",
+      "synthetic": true,
+      "type": "VirtualRide"
+    },
+    {
+      "average_heartrate": 134,
+      "average_watts": 145,
+      "id": "demo-2026-10-10",
+      "moving_time": 6300,
+      "name": "Fictional indoor endurance ride",
+      "start_date_local": "2026-10-10T08:00:00",
+      "synthetic": true,
+      "type": "VirtualRide"
+    },
+    {
+      "average_heartrate": 135,
+      "average_watts": 150,
+      "id": "demo-2026-10-11",
+      "moving_time": 5400,
+      "name": "Fictional indoor endurance ride",
+      "start_date_local": "2026-10-11T08:00:00",
+      "synthetic": true,
+      "type": "VirtualRide"
+    },
+    {
+      "average_heartrate": 135,
+      "average_watts": 155,
+      "id": "demo-2026-10-13",
+      "moving_time": 3600,
+      "name": "Fictional indoor endurance ride",
+      "start_date_local": "2026-10-13T08:00:00",
+      "synthetic": true,
+      "type": "VirtualRide"
+    },
+    {
+      "average_heartrate": 133,
+      "average_watts": 130,
+      "id": "demo-2026-10-14",
+      "moving_time": 2700,
+      "name": "Fictional indoor endurance ride",
+      "start_date_local": "2026-10-14T08:00:00",
+      "synthetic": true,
+      "type": "VirtualRide"
+    },
+    {
+      "average_heartrate": 137,
+      "average_watts": 170,
+      "id": "demo-2026-10-15",
+      "moving_time": 4500,
+      "name": "Fictional indoor endurance ride",
+      "start_date_local": "2026-10-15T08:00:00",
+      "synthetic": true,
+      "type": "VirtualRide"
+    },
+    {
+      "average_heartrate": 134,
+      "average_watts": 145,
+      "id": "demo-2026-10-17",
+      "moving_time": 6300,
+      "name": "Fictional indoor endurance ride",
+      "start_date_local": "2026-10-17T08:00:00",
+      "synthetic": true,
+      "type": "VirtualRide"
+    },
+    {
+      "average_heartrate": 135,
+      "average_watts": 150,
+      "id": "demo-2026-10-18",
+      "moving_time": 5400,
+      "name": "Fictional indoor endurance ride",
+      "start_date_local": "2026-10-18T08:00:00",
+      "synthetic": true,
+      "type": "VirtualRide"
+    },
+    {
+      "average_heartrate": 135,
+      "average_watts": 155,
+      "id": "demo-2026-10-20",
+      "moving_time": 3600,
+      "name": "Fictional indoor endurance ride",
+      "start_date_local": "2026-10-20T08:00:00",
+      "synthetic": true,
+      "type": "VirtualRide"
+    },
+    {
+      "average_heartrate": 133,
+      "average_watts": 130,
+      "id": "demo-2026-10-21",
+      "moving_time": 2700,
+      "name": "Fictional indoor endurance ride",
+      "start_date_local": "2026-10-21T08:00:00",
+      "synthetic": true,
+      "type": "VirtualRide"
+    },
+    {
+      "average_heartrate": 137,
+      "average_watts": 170,
+      "id": "demo-2026-10-22",
+      "moving_time": 4500,
+      "name": "Fictional indoor endurance ride",
+      "start_date_local": "2026-10-22T08:00:00",
+      "synthetic": true,
+      "type": "VirtualRide"
+    },
+    {
+      "average_heartrate": 134,
+      "average_watts": 145,
+      "id": "demo-2026-10-24",
+      "moving_time": 6300,
+      "name": "Fictional indoor endurance ride",
+      "start_date_local": "2026-10-24T08:00:00",
+      "synthetic": true,
+      "type": "VirtualRide"
+    },
+    {
+      "average_heartrate": 135,
+      "average_watts": 150,
+      "id": "demo-2026-10-25",
+      "moving_time": 5400,
+      "name": "Fictional indoor endurance ride",
+      "start_date_local": "2026-10-25T08:00:00",
+      "synthetic": true,
+      "type": "VirtualRide"
+    },
+    {
+      "average_heartrate": 135,
+      "average_watts": 155,
+      "id": "demo-2026-10-27",
+      "moving_time": 3600,
+      "name": "Fictional indoor endurance ride",
+      "start_date_local": "2026-10-27T08:00:00",
+      "synthetic": true,
+      "type": "VirtualRide"
+    },
+    {
+      "average_heartrate": 133,
+      "average_watts": 130,
+      "id": "demo-2026-10-28",
+      "moving_time": 2700,
+      "name": "Fictional indoor endurance ride",
+      "start_date_local": "2026-10-28T08:00:00",
+      "synthetic": true,
+      "type": "VirtualRide"
+    },
+    {
+      "average_heartrate": 137,
+      "average_watts": 170,
+      "id": "demo-2026-10-29",
+      "moving_time": 4500,
+      "name": "Fictional indoor endurance ride",
+      "start_date_local": "2026-10-29T08:00:00",
+      "synthetic": true,
+      "type": "VirtualRide"
+    },
+    {
+      "average_heartrate": 134,
+      "average_watts": 145,
+      "id": "demo-2026-10-31",
+      "moving_time": 6300,
+      "name": "Fictional indoor endurance ride",
+      "start_date_local": "2026-10-31T08:00:00",
+      "synthetic": true,
+      "type": "VirtualRide"
+    },
+    {
+      "average_heartrate": 135,
+      "average_watts": 150,
+      "id": "demo-2026-11-01",
+      "moving_time": 5400,
+      "name": "Fictional indoor endurance ride",
+      "start_date_local": "2026-11-01T08:00:00",
+      "synthetic": true,
+      "type": "VirtualRide"
+    },
+    {
+      "average_heartrate": 135,
+      "average_watts": 155,
+      "id": "demo-2026-11-03",
+      "moving_time": 3600,
+      "name": "Fictional indoor endurance ride",
+      "start_date_local": "2026-11-03T08:00:00",
+      "synthetic": true,
+      "type": "VirtualRide"
+    }
+  ],
+  "daily": [
+    {
+      "date": "2026-10-07",
+      "duration_minutes": 45,
+      "sleep_hours": 7.5,
+      "synthetic": true
+    },
+    {
+      "date": "2026-10-08",
+      "duration_minutes": 75,
+      "sleep_hours": 7.7,
+      "synthetic": true
+    },
+    {
+      "date": "2026-10-09",
+      "duration_minutes": 0,
+      "sleep_hours": 7.9,
+      "synthetic": true
+    },
+    {
+      "date": "2026-10-10",
+      "duration_minutes": 105,
+      "sleep_hours": 7.5,
+      "synthetic": true
+    },
+    {
+      "date": "2026-10-11",
+      "duration_minutes": 90,
+      "sleep_hours": 7.7,
+      "synthetic": true
+    },
+    {
+      "date": "2026-10-12",
+      "duration_minutes": 0,
+      "sleep_hours": 7.9,
+      "synthetic": true
+    },
+    {
+      "date": "2026-10-13",
+      "duration_minutes": 60,
+      "sleep_hours": 7.5,
+      "synthetic": true
+    },
+    {
+      "date": "2026-10-14",
+      "duration_minutes": 45,
+      "sleep_hours": 7.7,
+      "synthetic": true
+    },
+    {
+      "date": "2026-10-15",
+      "duration_minutes": 75,
+      "sleep_hours": 7.9,
+      "synthetic": true
+    },
+    {
+      "date": "2026-10-16",
+      "duration_minutes": 0,
+      "sleep_hours": 7.5,
+      "synthetic": true
+    },
+    {
+      "date": "2026-10-17",
+      "duration_minutes": 105,
+      "sleep_hours": 7.7,
+      "synthetic": true
+    },
+    {
+      "date": "2026-10-18",
+      "duration_minutes": 90,
+      "sleep_hours": 7.9,
+      "synthetic": true
+    },
+    {
+      "date": "2026-10-19",
+      "duration_minutes": 0,
+      "sleep_hours": 7.5,
+      "synthetic": true
+    },
+    {
+      "date": "2026-10-20",
+      "duration_minutes": 60,
+      "sleep_hours": 7.7,
+      "synthetic": true
+    },
+    {
+      "date": "2026-10-21",
+      "duration_minutes": 45,
+      "sleep_hours": 7.9,
+      "synthetic": true
+    },
+    {
+      "date": "2026-10-22",
+      "duration_minutes": 75,
+      "sleep_hours": 7.5,
+      "synthetic": true
+    },
+    {
+      "date": "2026-10-23",
+      "duration_minutes": 0,
+      "sleep_hours": 7.7,
+      "synthetic": true
+    },
+    {
+      "date": "2026-10-24",
+      "duration_minutes": 105,
+      "sleep_hours": 7.9,
+      "synthetic": true
+    },
+    {
+      "date": "2026-10-25",
+      "duration_minutes": 90,
+      "sleep_hours": 7.5,
+      "synthetic": true
+    },
+    {
+      "date": "2026-10-26",
+      "duration_minutes": 0,
+      "sleep_hours": 7.7,
+      "synthetic": true
+    },
+    {
+      "date": "2026-10-27",
+      "duration_minutes": 60,
+      "sleep_hours": 7.9,
+      "synthetic": true
+    },
+    {
+      "date": "2026-10-28",
+      "duration_minutes": 45,
+      "sleep_hours": 7.5,
+      "synthetic": true
+    },
+    {
+      "date": "2026-10-29",
+      "duration_minutes": 75,
+      "sleep_hours": 7.7,
+      "synthetic": true
+    },
+    {
+      "date": "2026-10-30",
+      "duration_minutes": 0,
+      "sleep_hours": 7.9,
+      "synthetic": true
+    },
+    {
+      "date": "2026-10-31",
+      "duration_minutes": 105,
+      "sleep_hours": 7.5,
+      "synthetic": true
+    },
+    {
+      "date": "2026-11-01",
+      "duration_minutes": 90,
+      "sleep_hours": 7.7,
+      "synthetic": true
+    },
+    {
+      "date": "2026-11-02",
+      "duration_minutes": 0,
+      "sleep_hours": 7.9,
+      "synthetic": true
+    },
+    {
+      "date": "2026-11-03",
+      "duration_minutes": 60,
+      "sleep_hours": 7.5,
+      "synthetic": true
+    }
+  ],
+  "metadata": {
+    "last_updated": "2026-11-03T00:00:00Z",
+    "notice": "FICTIONAL DEMO DATA: generated values, no real person or measurements",
+    "source": "section-11-demo deterministic generator",
+    "synthetic": true,
+    "timezone": "UTC"
+  }
+}
