@@ -1,4 +1,4 @@
-# Section 11 public demo
+# About this demo
 
 > [!IMPORTANT]
 > **This demo shows how a Section 11 data repository works, not what your data will look like.**
@@ -19,8 +19,10 @@
 - **Automatic, verified updates.** When a new official release is published, the demo
   installs it on its own. [Actions](https://github.com/CrankAddict/section-11-demo/actions) and the
   [commit history](https://github.com/CrankAddict/section-11-demo/commits/main) show each installation and its release.
-- **The file layout of a real GitHub data repository:** the same seven JSON files,
-  `archive/`, `section11/` and [`custom/`](https://github.com/CrankAddict/section-11-demo/tree/main/custom) for your own files.
+- **The layout of a real GitHub data repository.** Apart from this `demo/` folder,
+  the repository looks exactly like a user's: the standard README, the same seven JSON
+  files, `archive/`, `section11/`, [`custom/`](https://github.com/CrankAddict/section-11-demo/tree/main/custom) for your own
+  files and a `DOSSIER.md` in the root, where a real user keeps theirs.
 
 ## What it does not show
 
@@ -55,5 +57,7 @@ Those examples come from an older sync version, so the newest sections are missi
 - **Your own computer:** follow the [local sync guide](https://github.com/CrankAddict/section-11-demo/blob/main/section11/examples/json-local-sync/SETUP.md).
 - **Updates and rollback:** see [UPDATING.md](https://github.com/CrankAddict/section-11-demo/blob/main/section11/examples/maintenance/UPDATING.md).
 - Keep your real dossier private. The [DOSSIER.md](https://github.com/CrankAddict/section-11-demo/blob/main/DOSSIER.md) here is an invented sample.
+
+Everything demo-specific lives in this `demo/` folder: the fictional generator and this page.
 
 Section 11 is distributed under its [LICENSE](https://github.com/CrankAddict/section-11-demo/blob/main/section11/LICENSE).
