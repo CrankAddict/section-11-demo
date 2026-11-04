@@ -1,14 +1,14 @@
 {
   "history": [
     {
-      "date": "2026-10-07",
+      "date": "2026-10-08",
       "ftp": 220,
       "indoor": true,
       "synthetic": true
     }
   ],
   "metadata": {
-    "last_updated": "2026-11-03T00:00:00Z",
+    "last_updated": "2026-11-04T00:00:00Z",
     "notice": "FICTIONAL DEMO DATA: generated values, no real person or measurements",
     "source": "section-11-demo deterministic generator",
     "synthetic": true,
