@@ -2,16 +2,6 @@
   "activities": [
     {
       "average_heartrate": 135,
-      "average_watts": 150,
-      "id": "demo-2026-10-11",
-      "moving_time": 5400,
-      "name": "Fictional indoor endurance ride",
-      "start_date_local": "2026-10-11T08:00:00",
-      "synthetic": true,
-      "type": "VirtualRide"
-    },
-    {
-      "average_heartrate": 135,
       "average_watts": 155,
       "id": "demo-2026-10-13",
       "moving_time": 3600,
@@ -199,15 +189,19 @@
       "start_date_local": "2026-11-07T08:00:00",
       "synthetic": true,
       "type": "VirtualRide"
+    },
+    {
+      "average_heartrate": 135,
+      "average_watts": 150,
+      "id": "demo-2026-11-08",
+      "moving_time": 5400,
+      "name": "Fictional indoor endurance ride",
+      "start_date_local": "2026-11-08T08:00:00",
+      "synthetic": true,
+      "type": "VirtualRide"
     }
   ],
   "daily": [
-    {
-      "date": "2026-10-11",
-      "duration_minutes": 90,
-      "sleep_hours": 7.7,
-      "synthetic": true
-    },
     {
       "date": "2026-10-12",
       "duration_minutes": 0,
@@ -369,10 +363,16 @@
       "duration_minutes": 105,
       "sleep_hours": 7.7,
       "synthetic": true
+    },
+    {
+      "date": "2026-11-08",
+      "duration_minutes": 90,
+      "sleep_hours": 7.9,
+      "synthetic": true
     }
   ],
   "metadata": {
-    "last_updated": "2026-11-07T00:00:00Z",
+    "last_updated": "2026-11-08T00:00:00Z",
     "notice": "FICTIONAL DEMO DATA: generated values, no real person or measurements",
     "source": "section-11-demo deterministic generator",
     "synthetic": true,
