@@ -109,6 +109,18 @@ def commit_sha(commit):
     return commit
 
 
+def operation_input(event):
+    inputs = event.get('inputs') or {}
+    if not isinstance(inputs, dict):
+        raise ValueError('invalid operation inputs')
+    operation = inputs.get('operation') or 'Sync'
+    if operation == 'Other':
+        operation = inputs.get('other_operation', '')
+    if operation not in ('Sync', 'Sync timer', 'Update', 'Status', 'Rollback'):
+        raise ValueError('unknown workflow operation')
+    return operation
+
+
 def receipt(raw, identity):
     return (json.dumps({'schema': 1, 'repository': REPOSITORY, 'tag': release_tag(identity['tag']),
                         'commit': commit_sha(identity['commit']), 'manifest_sha256': digest(raw)},
@@ -319,13 +331,13 @@ class Transport:
     def resolve(self, tag):
         obj = self.api('/git/ref/tags/' + release_tag(tag)).get('object')
         seen = set()
-        for _ in range(4):
+        for _ in range(5):
             if not isinstance(obj, dict):
                 break
             sha = commit_sha(obj.get('sha'))
             if obj.get('type') == 'commit':
                 return sha
-            if obj.get('type') != 'tag' or sha in seen:
+            if obj.get('type') != 'tag' or sha in seen or len(seen) >= 4:
                 break
             seen.add(sha)
             obj = self.api('/git/tags/' + sha).get('object')
@@ -658,6 +670,10 @@ def main():
     os.environ.update(clean)
     if args.phase == 'bootstrap' and ambient_credential:
         raise ValueError('initial runtime verification must be token-free')
+    if args.phase in ('bootstrap', 'prepare'):
+        event = decode(read_file(Path(os.environ['GITHUB_EVENT_PATH']).parent,
+                                 Path(os.environ['GITHUB_EVENT_PATH']).name, MAX_MANIFEST))
+        operation = operation_input(event)
     temp = private_root(os.environ['RUNNER_TEMP'], os.environ['GITHUB_WORKSPACE'])
     if args.phase == 'bootstrap':
         runtime_payload(temp, raw, entry, selected, checkout=os.environ['GITHUB_WORKSPACE'])
@@ -675,9 +691,6 @@ def main():
     if args.phase == 'prepare':
         if not args.accept_install:
             raise ValueError('explicit installation acceptance missing')
-        event = decode(read_file(Path(os.environ['GITHUB_EVENT_PATH']).parent,
-                                 Path(os.environ['GITHUB_EVENT_PATH']).name, MAX_MANIFEST))
-        operation = event.get('inputs', {}).get('operation', 'Sync') or 'Sync'
         release = acquire_application(transport, os.environ['GITHUB_WORKSPACE'], temp, selected,
                                       operation, args.force_release_download)
         os.environ['GITHUB_TOKEN'] = token
@@ -701,18 +714,39 @@ def main():
     if args.phase == 'maintain':
         controller.maintain(runtime=runtime)
     else:
-        try:
-            {'cache-prepare': controller.cache_prepare, 'sync': lambda: controller.run_sync(isolated=True),
-             'finalize-export': controller.finalize_export, 'validate': controller.validate_generated,
-             'publish': controller.publish_data, 'cache-promote': controller.cache_promote}[args.phase]()
-        except RuntimeError:
-            if args.phase == 'publish':
-                info = controller.context()
-                info['publication_uncertain'] = True
-                controller.context(info)
-            raise
+        run_phase(controller, args.phase)
     if privileged:
         print('Section 11 upstream total: requests=' + str(transport.requests) + '; bytes=' + str(transport.bytes))
+
+
+def run_phase(controller, phase):
+    call = {'cache-prepare': controller.cache_prepare, 'sync': lambda: controller.run_sync(isolated=True),
+            'finalize-export': controller.finalize_export, 'validate': controller.validate_generated,
+            'publish': controller.publish_data, 'cache-promote': controller.cache_promote}[phase]
+    if phase != 'publish':
+        return call()
+    # Recorded before the first publication request. A publisher stopped by its
+    # step deadline, cancellation or any other kill never reaches the lines
+    # below, so maintenance still reads the data outcome as uncertain.
+    publication_uncertain(controller, True)
+    try:
+        call()
+    except RuntimeError:
+        raise
+    except Exception:
+        # A refusal reported by this process is a known outcome, as before.
+        publication_uncertain(controller, False)
+        raise
+    publication_uncertain(controller, False)
+
+
+def publication_uncertain(controller, value):
+    info = controller.context()
+    if value:
+        info['publication_uncertain'] = True
+    else:
+        info.pop('publication_uncertain', None)
+    controller.context(info)
 
 
 def emit(**values):
