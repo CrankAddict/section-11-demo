@@ -203,12 +203,6 @@
   ],
   "daily": [
     {
-      "date": "2026-10-16",
-      "duration_minutes": 0,
-      "sleep_hours": 7.5,
-      "synthetic": true
-    },
-    {
       "date": "2026-10-17",
       "duration_minutes": 105,
       "sleep_hours": 7.7,
@@ -369,10 +363,16 @@
       "duration_minutes": 75,
       "sleep_hours": 7.5,
       "synthetic": true
+    },
+    {
+      "date": "2026-11-13",
+      "duration_minutes": 0,
+      "sleep_hours": 7.7,
+      "synthetic": true
     }
   ],
   "metadata": {
-    "last_updated": "2026-11-12T00:00:00Z",
+    "last_updated": "2026-11-13T00:00:00Z",
     "notice": "FICTIONAL DEMO DATA: generated values, no real person or measurements",
     "source": "section-11-demo deterministic generator",
     "synthetic": true,
