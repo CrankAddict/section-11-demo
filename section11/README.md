@@ -641,4 +641,6 @@ The software is provided "as is", without warranty of any kind.
 - **Intervals.icu:** [intervals.icu](https://intervals.icu)
 - **Discussion:** [Intervals.icu Forum Thread](https://forum.intervals.icu/t/section-11-open-protocol-for-ai-endurance-coaching-chatgpt-claude-grok-mistral/120602)
 
+**Related project:** [Peakfade](https://peakfade.com/), a free, open-source tracker for medication and supplement levels by the same author. It can import [Intervals.icu](https://intervals.icu/) wellness data, uses Section 11's wellness rules for its signals, and can share your logs with your AI coach via MCP or API.
+
 ---
